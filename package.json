@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "server": "node server.js",
-    "client": "cd ../ && npm start --prefix client",
-    "start": "concurrently \"npm run dev\" \"npm run client\""
+    "client": "cd ./client && npm start",
+    "build": "cd ./client && npm run build -- prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -18,11 +19,11 @@
     "colors": "^1.4.0",
     "concurrently": "^7.6.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^6.8.2",
-    "nodemon": "^2.0.20"
+    "express": "4.18.2",
+    "mongoose": "^6.8.2"
   },
   "devDependencies": {
-    "prettier": "2.8.1"
+    "prettier": "2.8.1",
+    "nodemon": "^2.0.20"
   }
 }

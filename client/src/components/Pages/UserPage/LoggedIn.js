@@ -67,13 +67,11 @@ export default function LoggedIn() {
     // request an update from the server
     // add the current user to the session storage of the browser
     console.log("saving user")
-    await axios
-      .post("http://localhost:5000/user/update", { user: currentUser })
-      .then(res => {
-        sessionStorage.setItem("PLAYER", JSON.stringify(res.data.updatedUser))
-        setCurrentUser(res.data.updatedUser)
-        setCanvasReady(true)
-      })
+    await axios.post("/user/update", { user: currentUser }).then(res => {
+      sessionStorage.setItem("PLAYER", JSON.stringify(res.data.updatedUser))
+      setCurrentUser(res.data.updatedUser)
+      setCanvasReady(true)
+    })
     console.log("finished saving")
   }
 
