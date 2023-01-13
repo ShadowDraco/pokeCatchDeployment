@@ -8,8 +8,9 @@
     "dev": "nodemon server.js",
     "server": "node server.js",
     "client": "cd ./client && npm start",
-    "build": "cd ./client && npm run build -- prefix client",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "install-client": "cd ./client && npm i && npm start",
+    "build": "cd ./client && npm run build",
+    "start": "concurrently \"npm run server\" \"npm run install-client\""
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,11 @@
     "colors": "^1.4.0",
     "concurrently": "^7.6.0",
     "dotenv": "^16.0.3",
-    "express": "4.18.2",
+    "express": "^4.18.2",
     "mongoose": "^6.8.2"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "devDependencies": {
     "prettier": "2.8.1",
