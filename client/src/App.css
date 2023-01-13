@@ -1,0 +1,42 @@
+body {
+  background-color: darkgrey;
+  min-width: 20rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.bg-gray {
+  background-color: rgb(43, 43, 49);
+}
+
+.loginSignupButton {
+  position: relative;
+  margin-left: 0;
+  left: 42%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+.align-left {
+  justify-content: left;
+  align-items: flex-start;
+}
