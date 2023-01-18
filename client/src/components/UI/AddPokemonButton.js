@@ -24,7 +24,7 @@ export default function AddPokemonButton() {
       console.log("adding pokemon to box")
 
       await axios
-        .post("https://poke-catch.herokuapp.com/user/add-pokemon-to-box", {
+        .post("/user/add-pokemon-to-box", {
           user: currentUser,
           pokemon: requestedPokemon,
         })

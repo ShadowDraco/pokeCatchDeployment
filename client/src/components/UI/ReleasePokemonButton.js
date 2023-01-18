@@ -30,7 +30,7 @@ export default function ReleasePokemonButton(props) {
       setSpinnerVariant("sauccess") // change spinner to green
 
       await axios
-        .post("https://poke-catch.herokuapp.com/user/release-user-pokemon", {
+        .post("/user/release-user-pokemon", {
           user: user,
           pokemon: props.pokemon,
           isInTeam: props.pokemon.isInTeam,
