@@ -29,7 +29,7 @@ export default function SignupForm() {
     try {
       setSpinnerVariant("success")
       await axios
-        .post("/user/signup", {
+        .post("https://poke-catch.herokuapp.com/user/signup", {
           username: currentUsername,
           password: currentPassword,
         })
