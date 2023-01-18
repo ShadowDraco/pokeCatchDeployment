@@ -1,6 +1,9 @@
 // import express server
 const express = require("express")
 const app = express()
+
+require("dotenv").config() // dot env for secret codes
+
 let port = process.env.PORT
 if (port == null || port == "") {
   port = 8000
@@ -10,7 +13,6 @@ const colors = require("colors")
 
 // include mongoose to connect to mongo db
 const mongoose = require("mongoose")
-require("dotenv").config() // dot env for secret codes
 const mongoURI = process.env.MONGO_URI
 
 // allow the server to send and recieve json from requests
