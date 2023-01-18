@@ -32,7 +32,7 @@ export default function AddItemButton() {
         })
 
       await axios
-        .post("/user/add-item-to-bag", {
+        .post("https://poke-catch.herokuapp.com/user/add-item-to-bag", {
           user: currentUser,
           item: requestedItem,
           quantity: quantityToAdd,

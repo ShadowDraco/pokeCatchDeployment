@@ -23,7 +23,7 @@ export default function TransferPokemonButton(props) {
       setSpinnerVariant("sauccess") // change spinner to green
 
       await axios
-        .post("/user/transfer-user-pokemon", {
+        .post("https://poke-catch.herokuapp.com/user/transfer-user-pokemon", {
           user: user,
           pokemon: props.pokemon,
           isInTeam: props.pokemon.isInTeam,

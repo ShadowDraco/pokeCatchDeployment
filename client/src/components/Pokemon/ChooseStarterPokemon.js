@@ -91,7 +91,7 @@ export default function ChooseStarterPokemon() {
     newPokemon.isInTeam = true
 
     await axios
-      .post("http://localhost:5000/user/choose-starter", {
+      .post("https://poke-catch.herokuapp.com/user/choose-starter", {
         user: currentUser,
         pokemon: newPokemon,
       })
