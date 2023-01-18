@@ -34,7 +34,7 @@ export default function Battle() {
       setSpinnerVariant("success") // change spinner to green
 
       await axios
-        .post("/user/update-after-battle", {
+        .post("https://poke-catch.herokuapp.com/user/update-after-battle", {
           user: user,
           pokemon: user.team[1],
         })
