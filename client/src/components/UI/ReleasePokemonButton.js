@@ -30,7 +30,7 @@ export default function ReleasePokemonButton(props) {
       setSpinnerVariant("sauccess") // change spinner to green
 
       await axios
-        .post("/user/release-user-pokemon", {
+        .post("http://localhost:8000/user/release-user-pokemon", {
           user: user,
           pokemon: props.pokemon,
           isInTeam: props.pokemon.isInTeam,

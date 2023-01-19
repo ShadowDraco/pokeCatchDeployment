@@ -32,7 +32,7 @@ export default function AddItemButton() {
         })
 
       await axios
-        .post("/user/add-item-to-bag", {
+        .post("http://localhost:8000/user/add-item-to-bag", {
           user: currentUser,
           item: requestedItem,
           quantity: quantityToAdd,

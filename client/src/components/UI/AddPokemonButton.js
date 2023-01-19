@@ -24,7 +24,7 @@ export default function AddPokemonButton() {
       console.log("adding pokemon to box")
 
       await axios
-        .post("/user/add-pokemon-to-box", {
+        .post("http://localhost:8000/user/add-pokemon-to-box", {
           user: currentUser,
           pokemon: requestedPokemon,
         })

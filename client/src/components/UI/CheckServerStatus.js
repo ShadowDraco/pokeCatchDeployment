@@ -4,7 +4,7 @@ import axios from "axios"
 
 export default function CheckStatusButton() {
   function checkServerStatus() {
-    axios.get("https://poke-catch.herokuapp.com/healthy").then(res => {
+    axios.get("http://localhost:8000/healthy").then(res => {
       console.log(res.data)
     })
   }

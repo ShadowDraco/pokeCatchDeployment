@@ -1,12 +1,20 @@
 // import express server
 const express = require("express")
 const app = express()
+const path = require("path")
 
 require("dotenv").config() // dot env for secret codes
 
 let port = process.env.PORT
 if (port == null || port == "") {
   port = 8000
+}
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client", "build")))
+  app.get("*", (req, resp) => {
+    resp.sendFile(path.join(__dirname, "client", "build", "index.html"))
+  })
 }
 // create easy console output colors
 const colors = require("colors")
