@@ -68,7 +68,7 @@ export default function LoggedIn() {
     // add the current user to the session storage of the browser
     console.log("saving user")
     await axios
-      .post("https://poke-catch.herokuapp.com/user/update", {
+      .post("/user/update", {
         user: currentUser,
       })
       .then(res => {
