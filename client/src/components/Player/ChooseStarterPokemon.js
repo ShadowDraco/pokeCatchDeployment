@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react"
+import { useContext, useEffect } from "react"
 import axios from "axios"
 
 import { UserContext } from "../../App"
@@ -6,13 +6,10 @@ import { PokemonContext } from "../../App"
 import "./ChooseStarterPokemon.css"
 
 import Container from "react-bootstrap/Container"
-import Card from "react-bootstrap/Card"
 
 export default function ChooseStarterPokemon() {
   const { currentUser, setCurrentUser } = useContext(UserContext)
   const { starterPokemon, setStarterPokemon } = useContext(PokemonContext)
-
-  const [allStartersFetched, setAllStartersFetched] = useState(false)
 
   useEffect(() => {
     sessionStorage.getItem("STARTERS")
@@ -23,7 +20,6 @@ export default function ChooseStarterPokemon() {
   async function fetchStarterPokemon() {
     await setStarterPokemon(JSON.parse(sessionStorage.getItem("STARTERS")))
     console.log("fetched the starters")
-    setAllStartersFetched(true)
   }
 
   async function getStarterPokemon() {
@@ -55,12 +51,6 @@ export default function ChooseStarterPokemon() {
 
     sessionStorage.setItem("STARTERS", JSON.stringify(pokemon))
     console.log("done getting starters")
-    setAllStartersFetched(true)
-  }
-
-  // take the first letter to upper case then re-insert the rest of the string
-  function Capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1)
   }
 
   function choosePokemon(i) {
@@ -82,13 +72,13 @@ export default function ChooseStarterPokemon() {
       })
   }
 
-  return allStartersFetched ? (
+  return (
     <Container className="flex flex-column">
       <h1 className="text-light text-center bg-gray">
         Choose your starter Pokemon!
       </h1>
       <Container className="flex flex-center">
-        {starterPokemon.map((pokemon, i) => {
+        {starterPokemon?.map((pokemon, i) => {
           return (
             <PokemonCard
               pokemon={pokemon}
@@ -103,7 +93,5 @@ export default function ChooseStarterPokemon() {
         })}
       </Container>
     </Container>
-  ) : (
-    ""
   )
 }
