@@ -28,7 +28,7 @@ export default function SignupForm() {
     try {
       setSpinnerVariant("success")
       await axios
-        .post("ttp://localhost:8000/user/login", {
+        .post("http://localhost:8000/user/login", {
           username: currentUsername,
           password: currentPassword,
         })
