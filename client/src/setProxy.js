@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/",
     createProxyMiddleware({
-      target: "https://poke-catch.herokuapp.com/",
+      target: "https://localhost:8000",
       changeOrigin: true,
     })
   )

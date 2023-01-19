@@ -6,7 +6,7 @@ require("dotenv").config() // dot env for secret codes
 
 let port = process.env.PORT
 if (port == null || port == "") {
-  port = 5000
+  port = 8000
 }
 // create easy console output colors
 const colors = require("colors")
