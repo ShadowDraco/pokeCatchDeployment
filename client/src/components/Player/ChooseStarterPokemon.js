@@ -72,7 +72,7 @@ export default function ChooseStarterPokemon() {
     newPokemon.isInTeam = true
 
     axios
-      .post("http://localhost:8000/user/add-pokemon-to-team", {
+      .post("/user/add-pokemon-to-team", {
         user: currentUser,
         pokemon: newPokemon,
       })

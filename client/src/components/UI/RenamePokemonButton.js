@@ -31,7 +31,7 @@ export default function RenamePokemonButton(props) {
       setSpinnerVariant("success") // change spinner to green
 
       await axios
-        .post("http://localhost:8000/user/rename-user-pokemon", {
+        .post("/user/rename-user-pokemon", {
           user: user,
           pokemon: props.pokemon,
           isInTeam: props.pokemon.isInTeam,
