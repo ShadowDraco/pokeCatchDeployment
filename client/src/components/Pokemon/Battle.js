@@ -3,6 +3,7 @@ import { UserContext } from "../../App"
 import axios from "axios"
 
 import Container from "react-bootstrap/Container"
+import Button from "react-bootstrap/Button"
 import PokemonCard from "./PokemonCard"
 
 import { RequestContext } from "../../App"
